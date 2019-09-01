@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-mdx-netlify-cms-starter",
+  "name": "e-rise-frontend",
   "private": true,
-  "description": "Extension of the default Gatsby starter to add MDX and Netlify CMS",
-  "version": "0.2.0",
-  "author": "Renee Blackburn <rvrant@gmail.com>",
+  "description": "",
+  "version": "0.1.0",
+  "author": "daco.life team",
   "dependencies": {
     "@mdx-js/mdx": "^0.18.2",
     "@mdx-js/runtime": "^0.18.2",
@@ -30,7 +30,7 @@
   "keywords": [
     "gatsby"
   ],
-  "license": "MIT",
+  "license": "",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
@@ -41,9 +41,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/renvrant/gatsby-mdx-netlify-cms-starter"
+    "url": "https://github.com/paveli/e-Rise-frontend"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/paveli/e-Rise-frontend/issues"
   }
 }
