@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby-MDX + Netlify-CMS Starter`,
-    description: `Starter for Gatsby-MDX + Netlify CMS`,
-    author: `@renvrant`,
+    title: `e-Rise`,
+    description: `Fundraising and charity platform for e-Residents community`,
+    author: `daco.life`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -18,14 +18,16 @@ module.exports = {
     {
       resolve: `gatsby-mdx`,
       options: {
-        extensions: ['.mdx', '.md'],
+        extensions: [".mdx", ".md"],
         defaultLayouts: {
           // This entry template will switch the page template based on
           // a frontmatter value provided in the CMS, allowing users to
           // choose different template layouts.
-          default: require.resolve(`${__dirname}/src/page-templates/cms-entry.template.js`)
+          default: require.resolve(
+            `${__dirname}/src/page-templates/cms-entry.template.js`
+          ),
         },
-      }
+      },
     },
     {
       resolve: `gatsby-plugin-manifest`,
@@ -33,8 +35,8 @@ module.exports = {
         name: `gatsby-starter-default`,
         short_name: `starter`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#0000F0`,
+        theme_color: `#0000F0`,
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
