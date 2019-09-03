@@ -4,6 +4,11 @@ import { StaticQuery, graphql } from "gatsby"
 
 import { Header } from "./components"
 
+import { ThemeProvider } from "emotion-theming"
+
+import "./bootstrap-reboot.css"
+import preset from "./theme"
+
 // Global application wrapper
 export const AppLayout = ({ children, pageContext }) => (
   <StaticQuery
@@ -18,7 +23,7 @@ export const AppLayout = ({ children, pageContext }) => (
     `}
     render={data => {
       return (
-        <>
+        <ThemeProvider theme={preset}>
           <Header siteTitle={data.site.siteMetadata.title} />
 
           <div
@@ -32,7 +37,7 @@ export const AppLayout = ({ children, pageContext }) => (
             <main>{children}</main>
             <footer>© {new Date().getFullYear()}, e-Rise.org</footer>
           </div>
-        </>
+        </ThemeProvider>
       )
     }}
   />
