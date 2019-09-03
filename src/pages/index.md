@@ -4,6 +4,7 @@ templateKey: "home-page"
 sections:
   - body: >-
       Extended from the Gatsby starter, this starter aims to provide an example for using Gatsby-MDX with Netlify.
+      <Button variant='primary' mr={2}>Test</Button>
 
       ## Features
 
@@ -16,7 +17,7 @@ sections:
       * Extend Netlify CMS editor to support the insertion of a React component, allowing your editors to include things like buttons or testimonials
 
       * Swap default HTML elements in posts for React components, allowing for greater control
-      
+
       * All the usual Gatsby + MDX stuff
 
       <CallToAction url="https://github.com/renvrant/gatsby-mdx-netlify-cms-starter" align="center" bgColor="crimson">Check out the Repo</CallToAction>
@@ -45,4 +46,3 @@ sections:
       Due to the way Netlify CMS works, some CMS content is saved as Markdown `frontmatter` rather than actual markdown. Therefore, fields with a markdown editor will save a raw markdown string. It is up to our templates to correctly parse markdown. For this, we have the core component `<RenderMarkdown>` which will parse MDX upon receiving an MDX string and include supplied React components as appropriate. Under the hood, this uses [@mdx/runtime](https://mdxjs.com/advanced/runtime) so please look there fore configuration details.
     title: Frontmatter & Markdown
 ---
-

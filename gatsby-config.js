@@ -50,5 +50,6 @@ module.exports = {
         modulePath: `${__dirname}/src/cms/cms.js`, // for custom preview in the Netlify CMS
       },
     },
+    "gatsby-plugin-emotion",
   ],
 }

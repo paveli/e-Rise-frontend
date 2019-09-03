@@ -1,34 +1,38 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
-import React from "react"
+import { React, Fragment } from "react"
+import { Button, Flex, Box, Heading } from "rebass"
+
+import { Menu } from "./menu.component"
 
 export const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
+  <Fragment>
+    <header
       style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
+        marginBottom: `1.45rem`,
       }}
     >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
+      <Flex>
+        <Box p={3} width={1 / 4} color="white">
+          <Heading fontSize={[5, 6]} color="primary">
+            <Link
+              href="/"
+              style={{
+                color: `#0000F0`,
+                textDecoration: `none`,
+              }}
+            >
+              {" "}
+              {siteTitle}
+            </Link>
+          </Heading>
+        </Box>
+        <Box p={3} width={3 / 4} textAlign="right">
+          <Menu /> <Button variant="outline">Login with Keeper</Button>
+        </Box>
+      </Flex>
+    </header>
+  </Fragment>
 )
 
 Header.propTypes = {

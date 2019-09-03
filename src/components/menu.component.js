@@ -1,5 +1,6 @@
-import React from "react"
+import { React, Fragment } from "react"
 import { graphql, StaticQuery } from "gatsby"
+import { Link } from "rebass"
 import { safelyGetSiteConfig } from "../cms"
 
 export const query = graphql`
@@ -23,13 +24,13 @@ export const Menu = () => (
     render={data => {
       const menu = safelyGetSiteConfig(data.sitePage).menu_nav || []
       return (
-        <ul>
+        <Fragment>
           {menu.map((item, i) => (
-            <li key={i}>
-              <a href={item.url}>{item.text}</a>
-            </li>
+            <Link variant="nav" href={item.url} key={i}>
+              {item.text}
+            </Link>
           ))}
-        </ul>
+        </Fragment>
       )
     }}
   />
