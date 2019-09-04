@@ -27,7 +27,9 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
-    "rebass": "^4.0.5"
+    "react-redux": "^7.1.1",
+    "rebass": "^4.0.5",
+    "redux": "^4.0.4"
   },
   "devDependencies": {
     "prettier": "^1.18.2"
