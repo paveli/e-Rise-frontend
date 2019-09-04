@@ -18,10 +18,11 @@ function mapStateToProps(state) {
 }
 
 class Auth extends Component {
-	Waves = window.Waves
-
 	loginWithWavesKeeper = () => {
-		console.log(this.Waves)
+		if (typeof window !== `undefined`) {
+			this.Waves = window.Waves
+		}
+
 		this.Waves.auth({
 			name: "e-Rise.org",
 			data: "Login on e-Rise.org",
