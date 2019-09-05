@@ -1,8 +1,9 @@
-import { React, Component, Fragment } from "react"
+import { React, Component } from "react"
 import { Button } from "rebass"
 import { connect } from "react-redux"
 
 import { updateWavesAddress } from "../store/actions"
+import { navigate } from "gatsby"
 
 function mapDisptchToProps(dispatch) {
 	return {
@@ -20,7 +21,12 @@ function mapStateToProps(state) {
 class Auth extends Component {
 	loginWithWavesKeeper = () => {
 		if (typeof window !== `undefined`) {
-			this.Waves = window.Waves
+			if (typeof window.Waves !== `undefined`) {
+				this.Waves = window.Waves
+			} else {
+				navigate("/content/waves-keeper-install")
+				return // stops function execution
+			}
 		}
 
 		this.Waves.auth({
