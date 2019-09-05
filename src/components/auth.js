@@ -1,6 +1,7 @@
-import { React, Component } from "react"
-import { Button } from "rebass"
+import { React, Component, Fragment } from "react"
+import { Button, Box } from "rebass"
 import { connect } from "react-redux"
+import hashicon from "hashicon"
 
 import { updateWavesAddress } from "../store/actions"
 import { navigate } from "gatsby"
@@ -37,6 +38,7 @@ class Auth extends Component {
 		})
 			.then(res => {
 				this.props.updateWavesAddress(res.address)
+
 				// data in variable res is shown below
 				//{
 				//  "data":"Waves Keeper",
@@ -57,9 +59,25 @@ class Auth extends Component {
 
 	render() {
 		return this.props.wavesAddress ? (
-			<Button variant="outline" alt="{this.props.wavesAddress}">
-				Hi, {this.props.wavesAddress.substring(0, 10)}..!
-			</Button>
+			<Fragment>
+				<Button disabled variant="outline" title={this.props.wavesAddress}>
+					<img
+						width="26"
+						height="26"
+						alt={this.props.wavesAddress}
+						title={this.props.wavesAddress}
+						src={hashicon(this.props.wavesAddress).toDataURL()}
+					/>{" "}
+					Welcome!
+					{/* <Box
+						sx={{
+							fontSize: "4pt",
+						}}
+					>
+						{this.props.wavesAddress}
+					</Box> */}
+				</Button>
+			</Fragment>
 		) : (
 			<Button variant="outline" onClick={this.loginWithWavesKeeper}>
 				Login with Waves Keeper
