@@ -10,19 +10,19 @@ import { safelyGetFrontMatter } from "../cms"
 // If you're only looking for how to specify a different template per content folder, see:
 // https://www.gatsbyjs.org/packages/gatsby-mdx/#installation
 const componentTemplateMap = {
-  "home-page": HomePage,
-  "hidden-page": NotFoundPage,
+	"home-page": HomePage,
+	"hidden-page": NotFoundPage,
 }
 
 const CMSTemplate = props => {
-  const { pageContext } = props
-  const { templateKey } = safelyGetFrontMatter(pageContext)
-  const Page = componentTemplateMap[templateKey]
-  return (
-    <AppLayout>
-      {Page ? <Page {...props} /> : <DefaultPage {...props} />}
-    </AppLayout>
-  )
+	const { pageContext } = props
+	const { templateKey } = safelyGetFrontMatter(pageContext)
+	const Page = componentTemplateMap[templateKey]
+	return (
+		<AppLayout>
+			{Page ? <Page {...props} /> : <DefaultPage {...props} />}
+		</AppLayout>
+	)
 }
 
 export default CMSTemplate
