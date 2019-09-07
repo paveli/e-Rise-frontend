@@ -1,5 +1,5 @@
 import { React, Component, Fragment } from "react"
-import { Button, Box } from "rebass"
+import { Button } from "rebass"
 import { connect } from "react-redux"
 import hashicon from "hashicon"
 
