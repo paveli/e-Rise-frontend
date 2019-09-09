@@ -41,9 +41,10 @@ exports.createPages = async ({ actions: { createPage } }) => {
 	})
 
 	// Create a page for each Project.
-	await Object.values(allProjects).forEach(project => {
+	const allProjectsArray = Object.values(allProjects)
+	await asyncForEach(allProjectsArray, async project => {
 		let address = project.key.split("_")[0]
-		WT.nodeInteraction.accountData(address, API_HOST).then(res => {
+		await WT.nodeInteraction.accountData(address, API_HOST).then(res => {
 			createPage({
 				path: `/projects/${address}/`,
 				component: require.resolve("./src/page-templates/project.template.js"),

@@ -3,12 +3,13 @@ import { Flex, Box, Text, Heading, Button, Card } from "rebass"
 import { nodeInteraction } from "@waves/waves-transactions"
 import hashicon from "hashicon"
 
-import Link from "./link.component"
+// import Link from "./link.component"
 
 const API_HOST = "https://nodes-testnet.wavesnodes.com"
 
 const Project = ({ address, data }) => {
 	const [currentHeightNum, setCurrentHeightNum] = useState()
+	const [projectIcon, setProjectIcon] = useState()
 
 	const getCurrentHeightNum = async () => {
 		await nodeInteraction.currentHeight(API_HOST).then(res => {
@@ -16,8 +17,15 @@ const Project = ({ address, data }) => {
 		})
 	}
 
+	const getProjectIcon = async address => {
+		setProjectIcon(await hashicon(address).toDataURL())
+	}
+
 	useEffect(() => {
 		getCurrentHeightNum()
+	}, [])
+	useEffect(() => {
+		getProjectIcon(address)
 	}, [])
 
 	return (
@@ -27,7 +35,7 @@ const Project = ({ address, data }) => {
 					<Card>
 						<Flex>
 							<Box>
-								<img src={hashicon(address).toDataURL()} />
+								<img alt={address} title={address} src={projectIcon} />
 								<Text>
 									by: {data.eResidentName.value} (e-Resident personal code:{" "}
 									{data.eResidentPersonalCode.value})
