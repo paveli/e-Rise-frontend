@@ -18,11 +18,14 @@ exports.createPages = async ({ actions: { createPage } }) => {
 	})
 
 	// Create a page for each Project.
-	Object.values(allProjects).forEach(project => {
-		createPage({
-			path: `/projects/${project.key.split("_")[0]}/`,
-			component: require.resolve("./src/page-templates/project.template.js"),
-			context: { project },
+	await Object.values(allProjects).forEach(project => {
+		let address = project.key.split("_")[0]
+		WT.nodeInteraction.accountData(address, API_HOST).then(res => {
+			createPage({
+				path: `/projects/${address}/`,
+				component: require.resolve("./src/page-templates/project.template.js"),
+				context: { address: address, data: res },
+			})
 		})
 	})
 }

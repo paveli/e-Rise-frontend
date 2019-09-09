@@ -5,16 +5,13 @@ import { SEO, Heading } from "../components"
 import Project from "../components/project.component"
 import { AppLayout } from "../app-layout.component"
 
-// TODO print unique title
-const title = "Project"
-
 export const ProjectTemplate = ({ pageContext: _Project }) => {
 	return (
 		<article>
-			<SEO title={withFallback(title, "")} />
-			<Heading tag={1}>{title}</Heading>
-			{/* {JSON.stringify(_Project.project)} */}
-			<Project address={_Project.project.key.split("_")[0]} />
+			<SEO title={withFallback(_Project.data.fundraiseName.value, "")} />
+			<Heading tag={1}>{_Project.data.fundraiseName.value}</Heading>
+			{/* {JSON.stringify(_Project)} */}
+			<Project address={_Project.address} data={_Project.data} />
 		</article>
 	)
 }
