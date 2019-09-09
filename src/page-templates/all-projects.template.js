@@ -12,7 +12,7 @@ export const AllProjectsTemplate = ({ pageContext: allProjects }) => {
 			<SEO title={withFallback(title, "")} />
 			<Heading tag={1}>{title}</Heading>
 			{/* If children should be used instead of body, body will be empty, so it's safe to have both */}
-			{JSON.stringify(allProjects.allProjects)}
+			{JSON.stringify(allProjects)}
 		</article>
 	)
 }
