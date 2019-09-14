@@ -1,5 +1,5 @@
 import { React, Component, Fragment } from "react"
-import { Button } from "rebass"
+import { Button, Text } from "rebass"
 import { connect } from "react-redux"
 import hashicon from "hashicon"
 
@@ -60,7 +60,7 @@ class Auth extends Component {
 	render() {
 		return this.props.wavesAddress ? (
 			<Fragment>
-				<Button disabled variant="outline" title={this.props.wavesAddress}>
+				<Button disabled variant="outline" title={this.props.wavesAddress}  style={{backgroundColor:'white',width:'auto',textAlign:'left',fontcolor: 'white'}} >
 					<img
 						width="26"
 						height="26"
@@ -79,7 +79,7 @@ class Auth extends Component {
 				</Button>
 			</Fragment>
 		) : (
-			<Button variant="outline" onClick={this.loginWithWavesKeeper}>
+			<Button variant="outline" onClick={this.loginWithWavesKeeper} style={{backgroundColor:'white',width:'auto'}}>
 				Login with Waves Keeper
 			</Button>
 		)

@@ -7,6 +7,7 @@ import { AppLayout } from "../app-layout.component"
 
 export const ProjectTemplate = ({ pageContext: _Project }) => {
 	return (
+
 		<article>
 			<SEO title={withFallback(_Project.data.fundraiseName.value, "")} />
 			<Heading tag={1}>{_Project.data.fundraiseName.value}</Heading>

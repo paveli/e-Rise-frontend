@@ -5,7 +5,7 @@ import { Provider } from "react-redux"
 import { ThemeProvider } from "emotion-theming"
 
 import createStore from "./store/createStore"
-import { Header } from "./components"
+import { HeaderOriginal } from "./components"
 
 import "./bootstrap-reboot.css"
 import preset from "./theme"
@@ -13,10 +13,10 @@ import preset from "./theme"
 const store = createStore()
 
 // Global application wrapper
-export const AppLayout = ({ children, pageContext }) => (
+export const AppLayoutOriginal = ({ children, pageContext }) => (
 	<StaticQuery
 		query={graphql`
-			query SiteTitleQuery {
+			query SiteTitleQueryOriginal {
 				site {
 					siteMetadata {
 						title
@@ -28,7 +28,7 @@ export const AppLayout = ({ children, pageContext }) => (
 			return (
 				<Provider store={store}>
 					<ThemeProvider theme={preset}>
-						<Header siteTitle={data.site.siteMetadata.title} />
+						<HeaderOriginal siteTitle={data.site.siteMetadata.title} />
 
 						<div
 							style={{
@@ -39,9 +39,8 @@ export const AppLayout = ({ children, pageContext }) => (
 							}}
 						>
 							<main>{children}</main>
-							
+							<footer>© {new Date().getFullYear()}, e-Rise.org</footer>
 						</div>
-					<footer style={{marginLeft:'10%',marginRight:'10%'}}><div style={{color:'blue',display: 'inline'}}>e-Rise.org</div> © {new Date().getFullYear()}</footer>
 					</ThemeProvider>
 				</Provider>
 			)
@@ -49,8 +48,8 @@ export const AppLayout = ({ children, pageContext }) => (
 	/>
 )
 
-AppLayout.propTypes = {
+AppLayoutOriginal.propTypes = {
 	children: PropTypes.node.isRequired,
 }
 
-export default AppLayout
+export default AppLayoutOriginal
