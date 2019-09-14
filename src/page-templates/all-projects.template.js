@@ -32,7 +32,7 @@ export const AllProjectsTemplate = ({ pageContext: allProjects }) => {
 //	{JSON.stringify(allProjects.allProjectsData)}
 export const ProjectList = ({ pageContext: projects, itemKey: key }) => {
 	return (
-		<Box width={1 / 3} p={1} style={{marginRight:'5%'}}>
+		<Box width={1 / 3} p={1} style={{marginRight:'1%'}}>
 			<Flex>
 				<Box width={1} p={1} >
 					<Card style={{textAlign:'center', border:'2px Solid #DBDAE2', backgroundColor:'rgb(240,240,240)'}}>
