@@ -159,7 +159,13 @@ const Project = ({ address, data }) => {
 					<Heading fontSize={[3, 4]} color="secondary">
 						About project:
 					</Heading>
-					<Text>{data.fundraiseDescription.value}</Text>
+					<Text
+						dangerouslySetInnerHTML={{
+							__html: data.fundraiseDescription.value
+								.replace(/(?:\n\n)/g, "\n")
+								.replace(/(?:\r\n|\r|\n)/g, "<br/><br/>")
+						}}
+					></Text>
 					<br />
 				</Box>
 				<Box width={1 / 3} p={1}>

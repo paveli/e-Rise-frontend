@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, Box, Heading } from "rebass";
+import { Box, Heading } from "rebass";
 
 import { withFallback } from "../cms";
 import { SEO } from "../components";

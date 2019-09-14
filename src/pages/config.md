@@ -3,7 +3,7 @@ title: e-Rise
 desc: Fundraising and charity platform for e-Residents community
 menu_nav:
   - text: Projects
-    url: /projects
+    url: /projects#projects
   - text: Add project
     url: /add
   - text: About e-Rise

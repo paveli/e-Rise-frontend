@@ -32,10 +32,17 @@ export const AllProjectsTemplate = ({ pageContext: allProjects }) => {
 //	{JSON.stringify(allProjects.allProjectsData)}
 export const ProjectList = ({ pageContext: projects, itemKey: key }) => {
 	return (
-		<Box width={1 / 3} p={1} style={{marginRight:'5%'}}>
+		<Box width={1 / 3} p={1} style={{ marginRight: "5%" }}>
+			<a id="projects"></a>
 			<Flex>
-				<Box width={1} p={1} >
-					<Card style={{textAlign:'center', border:'2px Solid #DBDAE2', backgroundColor:'rgb(240,240,240)'}}>
+				<Box width={1} p={1}>
+					<Card
+						style={{
+							textAlign: "center",
+							border: "2px Solid #DBDAE2",
+							backgroundColor: "rgb(240,240,240)"
+						}}
+					>
 						<div>
 							{typeof document !== `undefined` ? (
 								<img alt={key} title={key} src={hashicon(key).toDataURL()} />
@@ -44,19 +51,41 @@ export const ProjectList = ({ pageContext: projects, itemKey: key }) => {
 							)}
 						</div>
 					</Card>
-					<Card style={{marginBottom:'30px'}}>
+					<Card style={{ marginBottom: "30px" }}>
 						<Heading fontSize={[3, 4]} color="primary">
 							<Link to={"/projects/".concat(key)}>
-								<div style={{display:'inline',color:'#000000',fontWeight:'bold'}}>{projects.fundraiseName.value}</div>
+								<div
+									style={{
+										display: "inline",
+										color: "#000000",
+										fontWeight: "bold"
+									}}
+								>
+									{projects.fundraiseName.value}
+								</div>
 							</Link>
 						</Heading>
 						<Text>
-							<div style={{fontFamily: 'Helvetica', color: '#000000', fontsize:'16px', fontWeight:'regular', marginBottom:'20px'}}>
+							<div
+								style={{
+									fontFamily: "Helvetica",
+									color: "#000000",
+									fontsize: "16px",
+									fontWeight: "regular",
+									marginBottom: "20px"
+								}}
+							>
 								{projects.fundraiseDescription.value}
 							</div>
 						</Text>
 						<Text>
-							<div style={{color: '#000000', fontsize:'16px', fontWeight:'bold'}}>
+							<div
+								style={{
+									color: "#000000",
+									fontsize: "16px",
+									fontWeight: "bold"
+								}}
+							>
 								by: {projects.eResidentName.value}
 							</div>
 						</Text>
