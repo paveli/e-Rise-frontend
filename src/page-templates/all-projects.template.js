@@ -15,19 +15,21 @@ export const AllProjectsTemplate = ({ pageContext: allProjects }) => {
 		<article>
 			<SEO title={withFallback(title, "")} />
 			<Heading tag={1}>{title}</Heading>
-			{JSON.stringify(allProjects.allProjectsData)}
-			{Object.keys(allProjects.allProjectsData).map(item => {
-				return <ProjectList pageContext={allProjects.allProjectsData[item]} itemKey={item}/>
-			})}
+			<Fragment>
+				<Flex>
+					{Object.keys(allProjects.allProjectsData).map(item => {
+						return <ProjectList pageContext={allProjects.allProjectsData[item]} itemKey={item}/>
+					})}
+				</Flex>
+			</Fragment>
 		</article>
 	)
 }
 // foreach jsx
-//
+//	{JSON.stringify(allProjects.allProjectsData)}
 export const ProjectList = ({ pageContext: projects, itemKey: key}) => {
 	return (
-		<Fragment>
-		<Flex>
+		
 				<Box width={1/4} p={1}>
 					<Card>
 						<Flex>
@@ -41,6 +43,7 @@ export const ProjectList = ({ pageContext: projects, itemKey: key}) => {
 									by: {projects.fundraiseDescription.value}
 								</Text>	
 								<Text>
+									<br/>
 									by: {projects.eResidentName.value}
 								</Text>	
 							</Box>
@@ -48,8 +51,7 @@ export const ProjectList = ({ pageContext: projects, itemKey: key}) => {
 						</Flex>
 					</Card>
 				</Box>
-		</Flex>
-		</Fragment>
+		
 		
 	)
 }
