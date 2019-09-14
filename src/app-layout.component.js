@@ -55,8 +55,10 @@ export const AppLayout = ({ children, pageContext, props }) => (
 							<main>{children}</main>
 						</div>
 						<footer style={{ marginLeft: "10%", marginRight: "10%" }}>
-							<div style={{ color: "blue", display: "inline" }}>e-Rise.org</div>{" "}
+							<div style={{ color: "blue", display: "inline", fontWeight:"bold", fontSize:"20px", marginRight:'5px' }}>e-Rise.org</div>{" "}
+							<div style={{ display: "inline", fontSize:"20px" }}>
 							© {new Date().getFullYear()}
+							</div>
 						</footer>
 					</ThemeProvider>
 				</Provider>

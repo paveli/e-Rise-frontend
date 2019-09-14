@@ -19,7 +19,7 @@ export const Header = ({ siteTitle }) => (
 				marginBottom: `1.45rem`,
 				backgroundColor: "blue",
 				width: "auto",
-				height: "540px",
+				height: "740px",
 				fontColor: "white"
 			}}
 		>
@@ -45,7 +45,7 @@ export const Header = ({ siteTitle }) => (
 						<Menu /> {"  "} <Auth />
 					</Box>
 				</Flex>
-				<Flex style={{ marginBottom: "80px", marginTop: "80px" }}>
+				<Flex style={{ marginBottom: "80px", marginTop: "160px" }}>
 					<Box p={3} width={1 / 2}>
 						<Heading fontSize={[5, 6]} color="white">
 							Where e-Residents and fundraising meet
