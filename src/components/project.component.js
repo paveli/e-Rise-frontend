@@ -8,6 +8,7 @@ import styled from "styled-components";
 import { CheckShield } from "styled-icons/boxicons-regular/CheckShield";
 import axios from "axios";
 import moment from "moment";
+import numeral from "numeral";
 
 const startCalcDateBlock = 674950;
 const startCalcDate = "14 Sep 2019";
@@ -148,20 +149,26 @@ const Project = ({ address, data }) => {
 							<Box>
 								<Heading fontSize={[3, 4]} color="primary">
 									{eurPrice
-										? ((balance / 100000000) * eurPrice).toFixed(0)
+										? numeral(
+												((balance / 100000000) * eurPrice).toFixed(0)
+										  ).format("0,0")
 										: ""}{" "}
 									EUR
 								</Heading>
 								<Text>
 									of{" "}
 									{eurPrice
-										? (data.fundraiseTargetWaves.value * eurPrice).toFixed(0)
+										? numeral(
+												(data.fundraiseTargetWaves.value * eurPrice).toFixed(0)
+										  ).format("0,0")
 										: ""}{" "}
 									EUR fundraise goal
 								</Text>
 								<Text fontSize={[1, 2]}>
-									({(balance / 100000000).toFixed(2)} WAVES of{" "}
-									{data.fundraiseTargetWaves.value} WAVES)
+									({numeral((balance / 100000000).toFixed(2)).format("0,0.00")}{" "}
+									WAVES of{" "}
+									{numeral(data.fundraiseTargetWaves.value).format("0,0.00")}{" "}
+									WAVES)
 								</Text>
 								<br />
 								<Text>
