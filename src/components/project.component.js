@@ -137,13 +137,15 @@ const Project = ({ address, data }) => {
 		<Fragment>
 			<Flex>
 				<Box width={2 / 3} p={1}>
-					<img
-						alt={address}
-						title={address}
-						src={projectIcon}
-						width="400"
-						style={{ align: "center" }}
-					/>
+					<center>
+						<img
+							alt={address}
+							title={address}
+							src={projectIcon}
+							width="400"
+							style={{ align: "center" }}
+						/>
+					</center>
 
 					<Heading fontSize={[3, 4]} color="secondary">
 						About project:
@@ -154,7 +156,7 @@ const Project = ({ address, data }) => {
 				<Box width={1 / 3} p={1}>
 					<Flex>
 						<Box width={1}>
-							<Heading fontSize={[3, 4]} color="primary">
+							<Heading fontSize={[6]} color="primary">
 								€
 								{eurPrice
 									? numeral(
@@ -207,25 +209,37 @@ const Project = ({ address, data }) => {
 								(Current/Expiary blocks: {currentHeightNum}/
 								{data.fundraiseExpiryBlock.value})
 							</Text>
-							<Label htmlFor="amount">Waves</Label>
-							<Input
-								id="amount"
-								name="amount"
-								type="number"
-								sx={{
-									width: 80
-								}}
-								onChange={evt => updateWavesToSend(evt.target.value)}
-							/>
-							<Button
-								variant="primary"
-								sx={{
-									width: 200
-								}}
-								onClick={() => sendWaves(100)}
-							>
-								Support project
-							</Button>
+							<br />
+							<br />
+							<Flex>
+								<Box width={1 / 3}>
+									<Input
+										id="amount"
+										name="amount"
+										type="number"
+										placeholder="WAVES"
+										sx={{
+											width: 100,
+											height: 40
+										}}
+										onChange={evt => updateWavesToSend(evt.target.value)}
+									/>
+								</Box>
+								<Box width={2 / 3}>
+									<span>&nbsp;</span>
+									<Button
+										variant="primary"
+										sx={{
+											width: 200,
+											height: 40
+										}}
+										onClick={() => sendWaves(100)}
+									>
+										Support project
+									</Button>
+								</Box>
+							</Flex>
+
 							<br />
 							<br />
 							<Text fontSize={[2]}>Project by: {data.eResidentName.value}</Text>

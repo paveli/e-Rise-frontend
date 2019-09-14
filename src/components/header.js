@@ -23,6 +23,8 @@ export const Header = ({ siteTitle }) => (
 				fontColor: "white"
 			}}
 		>
+			<br />
+
 			<div style={{ marginRight: "10%", marginLeft: "10%" }}>
 				<Flex>
 					<Box p={3} width={1 / 4} color="white">

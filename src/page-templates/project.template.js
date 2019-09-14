@@ -13,7 +13,7 @@ export const ProjectTemplate = ({ pageContext: _Project }) => {
 
 			<Box>
 				<center>
-					<Heading tag={1} color="black" fontSize={[5, 6]}>
+					<Heading tag={1} color="black" fontSize={[5, 6]} p={5}>
 						{_Project.data.fundraiseName.value}
 					</Heading>
 				</center>
