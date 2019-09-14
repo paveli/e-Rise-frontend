@@ -19,11 +19,11 @@ export const Header = ({ siteTitle }) => (
 				marginBottom: `1.45rem`,
 				backgroundColor: 'blue',
 				width:'auto',
-				height:'auto',
+				height:'540px',
 				fontColor:'white'
 			}}
 		>
-		<div  style={{marginRight: '10%',marginLeft: '10%'}}>
+		<div style={{marginRight: '10%',marginLeft: '10%'}}>
 			<Flex>
 				<Box p={3} width={1 / 4} color="white">
 					<Heading fontSize={[5, 6]} color="primary">
@@ -43,12 +43,12 @@ export const Header = ({ siteTitle }) => (
 					<Menu /> {"  "} <Auth />
 				</Box>
 			</Flex>
-			<Flex>
+			<Flex style={{marginBottom:'80px',marginTop:'80px'}}>
 				<Box p={3} width={1 / 2}>
 					<Heading fontSize={[5, 6]} color="white">
 						Where e-Residents and fundraising meet
 					</Heading>
-					<Text fontSize={[ 3, 4, 5 ]} color='white'>A global platform, where all e-residents meet, share great ideas and donation takes place</Text>
+					<Text fontSize={[ 2, 3, 4 ]} color='white'>A global platform, where all e-residents meet, share great ideas and donation takes place</Text>
 					
 				</Box>
 				<Box p={3} width={1 / 2} style={{textAlign:'center'}}>
