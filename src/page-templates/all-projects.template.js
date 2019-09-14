@@ -46,7 +46,7 @@ export const ProjectList = ({ pageContext: projects, itemKey: key }) => {
 					</Card>
 					<Card style={{marginBottom:'30px'}}>
 						<Heading fontSize={[3, 4]} color="primary">
-							<Link to={"/projects/".concat(key)}>,
+							<Link to={"/projects/".concat(key)}>
 								<div style={{display:'inline',color:'#000000',fontWeight:'bold'}}>{projects.fundraiseName.value}</div>
 							</Link>
 						</Heading>
