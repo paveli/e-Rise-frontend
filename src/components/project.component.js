@@ -11,6 +11,8 @@ import moment from "moment";
 import numeral from "numeral";
 import toast from "toasted-notes";
 
+import img1 from "../images/image-tile-1@2x.png";
+
 import "../toaster.css";
 
 const startCalcDateBlock = 674950;
@@ -147,15 +149,19 @@ const Project = ({ address, data }) => {
 			<Flex>
 				<Box width={2 / 3} p={1}>
 					<center>
-						<img
-							alt={address}
-							title={address}
-							src={projectIcon}
-							width="400"
-							style={{ align: "center" }}
-						/>
+						{address === "3N3usbvf887o2qW6aLumP1orBQGWacnYB1a" ? (
+							<img src={img1} width="600" />
+						) : (
+							<img
+								alt={address}
+								title={address}
+								src={projectIcon}
+								width="400"
+								style={{ align: "center" }}
+							/>
+						)}
 					</center>
-
+					<br />
 					<Heading fontSize={[3, 4]} color="secondary">
 						About project:
 					</Heading>
@@ -168,7 +174,7 @@ const Project = ({ address, data }) => {
 					></Text>
 					<br />
 				</Box>
-				<Box width={1 / 3} p={1}>
+				<Box width={1 / 3} pl={3}>
 					<Flex>
 						<Box width={1}>
 							<Heading fontSize={[6]} color="primary">

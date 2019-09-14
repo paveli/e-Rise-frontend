@@ -6,6 +6,8 @@ import { Box, Flex, Text, Card } from "rebass";
 import { AppLayout } from "../app-layout.component";
 import { Link } from "../components/link.component";
 
+import img1 from "../images/image-tile-1@2x.png";
+
 const title = "All projects";
 const linkBasic = "/projects/";
 
