@@ -1,7 +1,7 @@
 import React, { Fragment } from "react"
 import hashicon from "hashicon";
 import { withFallback } from "../cms"
-import { SEO, Heading } from "../components"
+import { SEO, Heading, Header } from "../components"
 import { Box,Flex,Text,Card } from "rebass"
 import { AppLayout } from "../app-layout.component"
 import { Link } from "../components/link.component"
@@ -14,7 +14,6 @@ export const AllProjectsTemplate = ({ pageContext: allProjects }) => {
 	return (
 		<article>
 			<SEO title={withFallback(title, "")} />
-			<Heading tag={1}>{title}</Heading>
 			<Fragment>
 				<Flex>
 					{Object.keys(allProjects.allProjectsData).map(item => {
@@ -29,7 +28,6 @@ export const AllProjectsTemplate = ({ pageContext: allProjects }) => {
 //	{JSON.stringify(allProjects.allProjectsData)}
 export const ProjectList = ({ pageContext: projects, itemKey: key}) => {
 	return (
-		
 				<Box width={1/4} p={1}>
 					<Card>
 						<Flex>

@@ -18,7 +18,7 @@ export const query = graphql`
   }
 `
 
-export const Menu = () => (
+export const MenuOriginal = () => (
   <StaticQuery
     query={query}
     render={data => {
@@ -26,7 +26,7 @@ export const Menu = () => (
       return (
         <Fragment>
           {menu.map((item, i) => (
-            <Link variant="nav" to={item.url} key={i} style={{color: `white`, textDecoration: `none`}}>
+            <Link variant="nav" to={item.url} key={i}>
               {item.text}
             </Link>
           ))}
