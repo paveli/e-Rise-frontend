@@ -32,30 +32,37 @@ export const AllProjectsTemplate = ({ pageContext: allProjects }) => {
 //	{JSON.stringify(allProjects.allProjectsData)}
 export const ProjectList = ({ pageContext: projects, itemKey: key }) => {
 	return (
-		<Box width={1 / 4} p={1}>
-			<Card>
-				<Flex>
-					<Box width={1} p={1}>
-						<center>
+		<Box width={1 / 3} p={1} style={{marginRight:'5%'}}>
+			<Flex>
+				<Box width={1} p={1} >
+					<Card style={{textAlign:'center', border:'2px Solid #DBDAE2', backgroundColor:'rgb(240,240,240)'}}>
+						<div>
 							{typeof document !== `undefined` ? (
 								<img alt={key} title={key} src={hashicon(key).toDataURL()} />
 							) : (
 								""
 							)}
-						</center>
+						</div>
+					</Card>
+					<Card style={{marginBottom:'30px'}}>
 						<Heading fontSize={[3, 4]} color="primary">
-							<Link to={"/projects/".concat(key)}>
-								{projects.fundraiseName.value}
+							<Link to={"/projects/".concat(key)}>,
+								<div style={{display:'inline',color:'#000000',fontWeight:'bold'}}>{projects.fundraiseName.value}</div>
 							</Link>
 						</Heading>
-						<Text>by: {projects.fundraiseDescription.value}</Text>
 						<Text>
-							<br />
-							by: {projects.eResidentName.value}
+							<div style={{fontFamily: 'Helvetica', color: '#000000', fontsize:'16px', fontWeight:'regular', marginBottom:'20px'}}>
+								{projects.fundraiseDescription.value}
+							</div>
 						</Text>
-					</Box>
-				</Flex>
-			</Card>
+						<Text>
+							<div style={{color: '#000000', fontsize:'16px', fontWeight:'bold'}}>
+								by: {projects.eResidentName.value}
+							</div>
+						</Text>
+					</Card>
+				</Box>
+			</Flex>
 		</Box>
 	);
 };
