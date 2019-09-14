@@ -36,10 +36,12 @@
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
     "react-redux": "^7.1.1",
+    "react-spring": "^8.0.27",
     "rebass": "^4.0.5",
     "redux": "^4.0.4",
     "styled-components": "^4.3.2",
-    "styled-icons": "^8.4.2"
+    "styled-icons": "^8.4.2",
+    "toasted-notes": "^3.0.0"
   },
   "devDependencies": {
     "prettier": "^1.18.2"

@@ -27,7 +27,7 @@ export const HomePageTemplate = ({ title, sections }) => (
 				</section>
 			);
 		})} */}
-		{navigate("/projects")}
+		{typeof window !== `undefined` ? navigate("/projects") : ""}
 	</article>
 );
 

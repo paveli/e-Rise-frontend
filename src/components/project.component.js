@@ -9,6 +9,9 @@ import { CheckShield } from "styled-icons/boxicons-regular/CheckShield";
 import axios from "axios";
 import moment from "moment";
 import numeral from "numeral";
+import toast from "toasted-notes";
+
+import "../toaster.css";
 
 const startCalcDateBlock = 674950;
 const startCalcDate = "14 Sep 2019";
@@ -106,6 +109,12 @@ const Project = ({ address, data }) => {
 					.then(tx => {
 						console.log(tx);
 						setBalance(balance + parseInt(wavesToSend) * 100000000);
+
+						toast.notify(
+							<Text gutter={false} variant="h3">
+								Your WAVES payment was successfull.
+							</Text>
+						);
 					})
 					.catch(error => {
 						console.error("Oooops. Something went wrong: ", error);
