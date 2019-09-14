@@ -10,28 +10,32 @@ export const HeaderSecond = ({ siteTitle }) => (
 	<Fragment>
 		<header
 			style={{
-				marginBottom: `1.45rem`
+				marginBottom: `1.45rem`,
+				width: "auto",
+				height: "auto"
 			}}
 		>
-			<Flex>
-				<Box p={3} width={1 / 4} color="white">
-					<Heading fontSize={[5, 6]} color="primary">
-						<Link
-							to="/"
-							style={{
-								color: `#0000F0`,
-								textDecoration: `none`
-							}}
-						>
-							{" "}
-							{siteTitle}
-						</Link>
-					</Heading>
-				</Box>
-				<Box p={3} width={3 / 4} textAlign="right">
-					<Menu type="second" /> {"  "} <Auth />
-				</Box>
-			</Flex>
+			<div style={{ marginRight: "10%", marginLeft: "10%" }}>
+				<Flex>
+					<Box p={3} width={1 / 4} color="white">
+						<Heading fontSize={[5, 6]} color="primary">
+							<Link
+								to="/"
+								style={{
+									color: `#0000F0`,
+									textDecoration: `none`
+								}}
+							>
+								{" "}
+								{siteTitle}
+							</Link>
+						</Heading>
+					</Box>
+					<Box p={3} width={3 / 4} textAlign="right">
+						<Menu type="second" /> {"  "} <Auth />
+					</Box>
+				</Flex>
+			</div>
 		</header>
 	</Fragment>
 );

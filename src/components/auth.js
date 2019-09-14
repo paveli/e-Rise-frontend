@@ -1,43 +1,43 @@
-import { React, Component, Fragment } from "react"
-import { Button, Text } from "rebass"
-import { connect } from "react-redux"
-import hashicon from "hashicon"
+import { React, Component, Fragment } from "react";
+import { Button, Text } from "rebass";
+import { connect } from "react-redux";
+import hashicon from "hashicon";
 
-import { updateWavesAddress } from "../store/actions"
-import { navigate } from "gatsby"
+import { updateWavesAddress } from "../store/actions";
+import { navigate } from "gatsby";
 
 function mapDisptchToProps(dispatch) {
 	return {
 		updateWavesAddress: wavesAddress =>
-			dispatch(updateWavesAddress(wavesAddress)),
-	}
+			dispatch(updateWavesAddress(wavesAddress))
+	};
 }
 
 function mapStateToProps(state) {
 	return {
-		wavesAddress: state.wavesAddress,
-	}
+		wavesAddress: state.wavesAddress
+	};
 }
 
 class Auth extends Component {
 	loginWithWavesKeeper = () => {
 		if (typeof window !== `undefined`) {
 			if (typeof window.Waves !== `undefined`) {
-				this.Waves = window.Waves
+				this.Waves = window.Waves;
 			} else {
-				navigate("/content/waves-keeper-install")
-				return // stops function execution
+				navigate("/content/waves-keeper-install");
+				return; // stops function execution
 			}
 		}
 
 		this.Waves.auth({
 			name: "e-Rise.org",
-			data: "Login on e-Rise.org",
+			data: "Login on e-Rise.org"
 			//icon:
 			//	"https://docs.wavesplatform.com/_theme/brand-logo/waves-docs-logo.png",
 		})
 			.then(res => {
-				this.props.updateWavesAddress(res.address)
+				this.props.updateWavesAddress(res.address);
 
 				// data in variable res is shown below
 				//{
@@ -53,14 +53,24 @@ class Auth extends Component {
 				//}
 			})
 			.catch(function(err) {
-				console.log(err)
-			})
-	}
+				console.log(err);
+			});
+	};
 
 	render() {
 		return this.props.wavesAddress ? (
 			<Fragment>
-				<Button disabled variant="outline" title={this.props.wavesAddress}  style={{backgroundColor:'white',width:'auto',textAlign:'left',fontcolor: 'white'}} >
+				<Button
+					disabled
+					variant="outline"
+					title={this.props.wavesAddress}
+					style={{
+						backgroundColor: "white",
+						width: "auto",
+						textAlign: "left",
+						fontcolor: "white"
+					}}
+				>
 					<img
 						width="26"
 						height="26"
@@ -79,14 +89,18 @@ class Auth extends Component {
 				</Button>
 			</Fragment>
 		) : (
-			<Button variant="outline" onClick={this.loginWithWavesKeeper} style={{backgroundColor:'white',width:'auto'}}>
-				Login with Waves Keeper
+			<Button
+				variant="outline"
+				onClick={this.loginWithWavesKeeper}
+				style={{ backgroundColor: "white", width: "auto" }}
+			>
+				Login
 			</Button>
-		)
+		);
 	}
 }
 
 export default connect(
 	mapStateToProps,
 	mapDisptchToProps
-)(Auth)
+)(Auth);

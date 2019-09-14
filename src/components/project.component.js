@@ -137,16 +137,18 @@ const Project = ({ address, data }) => {
 		<Fragment>
 			<Flex>
 				<Box width={1} p={1}>
-					<Card>
+					<Card p={20}>
 						<Flex>
-							<Box>
-								<img alt={address} title={address} src={projectIcon} />
-								<Text>
-									by: {data.eResidentName.value} (e-Resident personal code:{" "}
-									{data.eResidentPersonalCode.value})
-								</Text>
+							<Box width={3 / 5}>
+								<img
+									alt={address}
+									title={address}
+									src={projectIcon}
+									width="400"
+									style={{ align: "center" }}
+								/>
 							</Box>
-							<Box>
+							<Box width={2 / 5}>
 								<Heading fontSize={[3, 4]} color="primary">
 									{eurPrice
 										? numeral(
