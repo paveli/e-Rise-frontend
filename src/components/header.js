@@ -45,8 +45,8 @@ export const Header = ({ siteTitle }) => (
 						<Menu /> {"  "} <Auth />
 					</Box>
 				</Flex>
-				<Flex style={{ marginBottom: "80px", marginTop: "160px" }}>
-					<Box p={3} width={1 / 2}>
+				<Flex style={{ marginBottom: "80px", marginTop: "110px" }}>
+					<Box p={3} width={1 / 2} style={{marginTop:"70px"}}>
 						<Heading fontSize={[5, 6]} color="white">
 							Where e-Residents and fundraising meet
 						</Heading>
@@ -58,7 +58,7 @@ export const Header = ({ siteTitle }) => (
 					<Box p={3} width={1 / 2} style={{ textAlign: "center" }}>
 						<Image
 							src={imageFile}
-							style={{ width: "256px", height: "256px" }}
+							style={{ width: "350px", height: "350px" }}
 						/>
 					</Box>
 				</Flex>
