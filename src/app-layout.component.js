@@ -35,7 +35,8 @@ export const AppLayout = ({ children, pageContext, props }) => (
 					<ThemeProvider theme={preset}>
 						<Location>
 							{props => {
-								return props.location.pathname === "/" ? (
+								return props.location.pathname === "/" ||
+									props.location.pathname === "/projects" ? (
 									<Header siteTitle={data.site.siteMetadata.title} />
 								) : (
 									<HeaderSecond siteTitle={data.site.siteMetadata.title} />

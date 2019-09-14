@@ -15,6 +15,7 @@ export const HeaderSecond = ({ siteTitle }) => (
 				height: "auto"
 			}}
 		>
+			<br />
 			<div style={{ marginRight: "10%", marginLeft: "10%" }}>
 				<Flex>
 					<Box p={3} width={1 / 4} color="white">
