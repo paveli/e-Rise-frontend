@@ -26,7 +26,7 @@ export const Menu = props => (
 			return (
 				<Fragment>
 					{menu.map((item, i) =>
-						props.type == "second" ? (
+						props.type === "second" ? (
 							<Link
 								variant="nav"
 								to={item.url}

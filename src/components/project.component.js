@@ -136,118 +136,123 @@ const Project = ({ address, data }) => {
 	return (
 		<Fragment>
 			<Flex>
-				<Box width={1} p={1}>
-					<Card p={20}>
-						<Flex>
-							<Box width={3 / 5}>
-								<img
-									alt={address}
-									title={address}
-									src={projectIcon}
-									width="400"
-									style={{ align: "center" }}
-								/>
-							</Box>
-							<Box width={2 / 5}>
-								<Heading fontSize={[3, 4]} color="primary">
-									{eurPrice
-										? numeral(
-												((balance / 100000000) * eurPrice).toFixed(0)
-										  ).format("0,0")
-										: ""}{" "}
-									EUR
-								</Heading>
-								<Text>
-									of{" "}
-									{eurPrice
-										? numeral(
-												(data.fundraiseTargetWaves.value * eurPrice).toFixed(0)
-										  ).format("0,0")
-										: ""}{" "}
-									EUR fundraise goal
-								</Text>
-								<Text fontSize={[1, 2]}>
-									({numeral((balance / 100000000).toFixed(2)).format("0,0.00")}{" "}
-									WAVES of{" "}
-									{numeral(data.fundraiseTargetWaves.value).format("0,0.00")}{" "}
-									WAVES)
-								</Text>
-								<br />
-								<Text>
-									Expiary date:{" "}
-									{JSON.stringify(
-										(data.fundraiseExpiryBlock.value - startCalcDateBlock) /
-											1440 >
-											0
-									)
-										? moment(startCalcDate)
-												.add(
-													(data.fundraiseExpiryBlock.value -
-														startCalcDateBlock) /
-														1440,
-													"day"
-												)
-												.calendar()
-										: moment(startCalcDate)
-												.substract(
-													(data.fundraiseExpiryBlock.value -
-														startCalcDateBlock) /
-														1440,
-													"day"
-												)
-												.calendar()}
-									{}
-								</Text>
+				<Box width={2 / 3} p={1}>
+					<img
+						alt={address}
+						title={address}
+						src={projectIcon}
+						width="400"
+						style={{ align: "center" }}
+					/>
 
-								{/* <Text>Current block: {currentHeightNum}</Text> */}
-								<Text fontSize={[1, 2]}>
-									(Current/Expiary blocks: {currentHeightNum}/
-									{data.fundraiseExpiryBlock.value})
-								</Text>
-								<Label htmlFor="amount">Waves</Label>
-								<Input
-									id="amount"
-									name="amount"
-									type="number"
-									sx={{
-										width: 80
-									}}
-									onChange={evt => updateWavesToSend(evt.target.value)}
-								/>
-								<Button
-									variant="primary"
-									sx={{
-										width: 200
-									}}
-									onClick={() => sendWaves(100)}
-								>
-									Support project
-								</Button>
-							</Box>
-						</Flex>
-					</Card>
-
-					<Heading fontSize={[3, 4]} color="primary">
+					<Heading fontSize={[3, 4]} color="secondary">
 						About project:
 					</Heading>
 					<Text>{data.fundraiseDescription.value}</Text>
 					<br />
-					<Heading fontSize={[3, 4]} color="primary">
-						Blockchain data:
-					</Heading>
-					<Text>
-						Project approved: <GreenCheckShield size="25" /> yes
-						<br />
-						Smart contract address:{" "}
-						<a href={"https://wavesexplorer.com/testnet/address/" + address}>
-							{address}
-						</a>
-						<br />
-						Smart contract code: <GreenCheckShield size="25" /> verified e-Rise
-						smart contract v1.0 <br />
-						Current block: {currentHeightNum}, expiary block:{" "}
-						{data.fundraiseExpiryBlock.value}
-					</Text>
+				</Box>
+				<Box width={1 / 3} p={1}>
+					<Flex>
+						<Box width={1}>
+							<Heading fontSize={[3, 4]} color="primary">
+								€
+								{eurPrice
+									? numeral(
+											((balance / 100000000) * eurPrice).toFixed(0)
+									  ).format("0,0")
+									: ""}{" "}
+							</Heading>
+							<Text>
+								of €
+								{eurPrice
+									? numeral(
+											(data.fundraiseTargetWaves.value * eurPrice).toFixed(0)
+									  ).format("0,0")
+									: ""}{" "}
+								goal
+							</Text>
+							<Text fontSize={[1]}>
+								({numeral((balance / 100000000).toFixed(2)).format("0,0.00")}{" "}
+								WAVES of{" "}
+								{numeral(data.fundraiseTargetWaves.value).format("0,0.00")}{" "}
+								WAVES)
+							</Text>
+							<br />
+							<Text>
+								Expiary date:{" "}
+								{JSON.stringify(
+									(data.fundraiseExpiryBlock.value - startCalcDateBlock) /
+										1440 >
+										0
+								)
+									? moment(startCalcDate)
+											.add(
+												(data.fundraiseExpiryBlock.value - startCalcDateBlock) /
+													1440,
+												"day"
+											)
+											.calendar()
+									: moment(startCalcDate)
+											.substract(
+												(data.fundraiseExpiryBlock.value - startCalcDateBlock) /
+													1440,
+												"day"
+											)
+											.calendar()}
+								{}
+							</Text>
+
+							{/* <Text>Current block: {currentHeightNum}</Text> */}
+							<Text fontSize={[1]}>
+								(Current/Expiary blocks: {currentHeightNum}/
+								{data.fundraiseExpiryBlock.value})
+							</Text>
+							<Label htmlFor="amount">Waves</Label>
+							<Input
+								id="amount"
+								name="amount"
+								type="number"
+								sx={{
+									width: 80
+								}}
+								onChange={evt => updateWavesToSend(evt.target.value)}
+							/>
+							<Button
+								variant="primary"
+								sx={{
+									width: 200
+								}}
+								onClick={() => sendWaves(100)}
+							>
+								Support project
+							</Button>
+							<br />
+							<br />
+							<Text fontSize={[2]}>Project by: {data.eResidentName.value}</Text>
+
+							<Text fontSize={[1]}>
+								e-Resident personal code: {data.eResidentPersonalCode.value}
+							</Text>
+							<br />
+							<Heading fontSize={[3, 4]} color="secondary">
+								Blockchain data:
+							</Heading>
+							<Text>
+								Project approved: <GreenCheckShield size="25" /> yes
+								<br />
+								Smart contract: <GreenCheckShield size="25" />{" "}
+								<a
+									href={"https://wavesexplorer.com/testnet/address/" + address}
+								>
+									verified
+								</a>
+								<br />
+								Current block: {currentHeightNum}
+								<br />
+								Expiary block: {data.fundraiseExpiryBlock.value}
+							</Text>
+						</Box>
+					</Flex>
 				</Box>
 			</Flex>
 			{/* <div>{JSON.stringify(address)}</div>
