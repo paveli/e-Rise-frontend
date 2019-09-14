@@ -37,6 +37,7 @@
     "react-helmet": "^5.2.1",
     "react-redux": "^7.1.1",
     "react-spring": "^8.0.27",
+    "read-more-react": "^1.0.9",
     "rebass": "^4.0.5",
     "redux": "^4.0.4",
     "styled-components": "^4.3.2",
