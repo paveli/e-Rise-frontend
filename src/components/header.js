@@ -5,11 +5,12 @@ import { Flex, Box, Heading, Text, Button, Image } from "rebass"
 import { Menu } from "./menu.component"
 import { Link } from "./link.component"
 import Auth from "./auth"
+import imageFile from '../images/hero-image@2x.png';
 
 //<Box p={1} width={1}>
 //					<Button variant='primary' style={{backgroundColor:'turquoise'}} mr={2}>Sign up with Waves Keeper</Button> 
-//				<Button variant='secondary' style={{backgroundColor:'white'}} mr={2}><Text color='blue'>Secondary</Text></Button>
-//			</Box>
+	//				<Button variant='secondary' style={{backgroundColor:'white'}} mr={2}><Text color='blue'>Secondary</Text></Button>
+	//			</Box>
 
 export const Header = ({ siteTitle }) => (
 	<Fragment>
@@ -50,8 +51,8 @@ export const Header = ({ siteTitle }) => (
 					<Text fontSize={[ 3, 4, 5 ]} color='white'>A global platform, where all e-residents meet, share great ideas and donation takes place</Text>
 					
 				</Box>
-				<Box p={3} width={1 / 2}>
-					<Image src='picture-main.png'/>
+				<Box p={3} width={1 / 2} style={{textAlign:'center'}}>
+					<Image src={imageFile} style={{width:'256px', height:'256px' }}/>
 				</Box>
 			</Flex>
 		</div>
