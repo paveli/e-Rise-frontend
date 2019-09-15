@@ -80,6 +80,25 @@ export const ProjectList = ({ pageContext: projects, itemKey: key }) => {
 							) : (
 								""
 							)}
+							
+							{key === "3MtXEV4mvM3h97QTfZSwdXccYuN3afdmgik" ? (
+								<img src={img4} width="260" />
+							) : (
+								""
+							)}
+							
+							{key === "3MyLVtnMNEbY1DqqYwA35o9Y89PtryCWAXh" ? (
+								<img src={img5} width="260" />
+							) : (
+								""
+							)}
+							
+							{key === "3MsHpTc9RhavTTXWrYrjJ4EGjSsko9MKLvf" ? (
+								<img src={img6} width="260" />
+							) : (
+								""
+							)}
+					
 
 							{/* {typeof document !== `undefined` ? (
 								<img alt={key} title={key} src={hashicon(key).toDataURL()} />
