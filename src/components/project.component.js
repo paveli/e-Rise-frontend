@@ -12,6 +12,11 @@ import numeral from "numeral";
 import toast from "toasted-notes";
 
 import img1 from "../images/image-tile-1@2x.png";
+import img2 from "../images/image-tile-2@2x.png";
+import img3 from "../images/image-tile-3@2x.png";
+import img4 from "../images/image-tile-4@2x.png";
+import img5 from "../images/image-tile-5@2x.png";
+import img6 from "../images/image-tile-6@2x.png";
 
 import "../toaster.css";
 
@@ -60,18 +65,18 @@ const Project = ({ address, data }) => {
 		console.log("amount: " + amount);
 	};
 
-	// For the purpose oh hackathon the price is x1000
-	const hackathonMultiplier = 1000;
-	const getEurPriceFromMatcher = async () => {
-		await axios.get(API_MATCHER_EUR).then(res => {
-			setEurPrice(hackathonMultiplier);
-		});
-	};
+	// // For the purpose oh hackathon the price is x1000
+	// const hackathonMultiplier = 1000;
 	// const getEurPriceFromMatcher = async () => {
 	// 	await axios.get(API_MATCHER_EUR).then(res => {
-	// 		setEurPrice((res.data.lastPrice / 100) * hackathonMultiplier);
+	// 		setEurPrice(hackathonMultiplier);
 	// 	});
 	// };
+	const getEurPriceFromMatcher = async () => {
+		await axios.get(API_MATCHER_EUR).then(res => {
+			setEurPrice(res.data.lastPrice / 100);
+		});
+	};
 
 	let Waves;
 
@@ -152,13 +157,19 @@ const Project = ({ address, data }) => {
 						{address === "3N3usbvf887o2qW6aLumP1orBQGWacnYB1a" ? (
 							<img src={img1} width="600" />
 						) : (
-							<img
-								alt={address}
-								title={address}
-								src={projectIcon}
-								width="400"
-								style={{ align: "center" }}
-							/>
+							""
+						)}
+
+						{address === "3MrpG1dHLZfYjLYu6SXHii2vTHaegz3Bn41" ? (
+							<img src={img2} width="600" />
+						) : (
+							""
+						)}
+
+						{address === "3N8CnUEFz5DXSiYuqHMXWF9z1NzDB9wggiE" ? (
+							<img src={img3} width="600" />
+						) : (
+							""
 						)}
 					</center>
 					<br />
