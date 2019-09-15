@@ -48,11 +48,10 @@ export const Header = ({ siteTitle }) => (
 				<Flex style={{ marginBottom: "80px", marginTop: "110px" }}>
 					<Box p={3} width={1 / 2} style={{marginTop:"70px"}}>
 						<Heading fontSize={[5, 6]} color="white">
-							Where e-Residents and fundraising meet
+							Where e-Residents go to raise funds
 						</Heading>
 						<Text fontSize={[2, 3, 4]} color="white">
-							A global platform, where all e-residents meet, share great ideas
-							and donation takes place
+							A global approach to fundraising and boosting businesses, build on blockchain.
 						</Text>
 					</Box>
 					<Box p={3} width={1 / 2} style={{ textAlign: "center" }}>
