@@ -22,7 +22,7 @@ export const AllProjectsTemplate = ({ pageContext: allProjects }) => {
 		<article>
 			<SEO title={withFallback(title, "")} />
 			<Fragment>
-				<Flex flexWrap='wrap' mx={-2}>
+				<Flex flexWrap='wrap' mx={-2} style={{paddingTop:"13px"}}>
 					{Object.keys(allProjects.allProjectsData).map(item => {
 						return (
 							<ProjectList
