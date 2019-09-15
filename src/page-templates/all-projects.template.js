@@ -22,7 +22,7 @@ export const AllProjectsTemplate = ({ pageContext: allProjects }) => {
 		<article>
 			<SEO title={withFallback(title, "")} />
 			<Fragment>
-				<Flex>
+				<Flex flexWrap='wrap' mx={-2}>
 					{Object.keys(allProjects.allProjectsData).map(item => {
 						return (
 							<ProjectList
@@ -32,7 +32,8 @@ export const AllProjectsTemplate = ({ pageContext: allProjects }) => {
 						);
 					})}
 				</Flex>
-			</Fragment>
+		</Fragment>
+			
 		</article>
 	);
 };
@@ -48,10 +49,12 @@ export const AllProjectsTemplate = ({ pageContext: allProjects }) => {
 //	{JSON.stringify(allProjects.allProjectsData)}
 export const ProjectList = ({ pageContext: projects, itemKey: key }) => {
 	return (
-		<Box width={1 / 3} p={1} style={{ marginRight: "1%" }}>
+	
+	
+		<Box width={1 / 3} p={1} style={{     }}>
 			<a id="projects"></a>
 			<Flex>
-				<Box width={1} p={1}>
+				<Box width={1} px={2} py={2}>
 					<Card
 						style={{
 							textAlign: "center",
@@ -126,10 +129,15 @@ export const ProjectList = ({ pageContext: projects, itemKey: key }) => {
 								by: {projects.eResidentName.value}
 							</div>
 						</Text>
+						
 					</Card>
+					
+					
 				</Box>
 			</Flex>
 		</Box>
+		
+		
 	);
 };
 //<Link to={'/projects/'.concat(key)} >sdfsdfsdf</Link>
