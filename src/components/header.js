@@ -51,7 +51,7 @@ export const Header = ({ siteTitle }) => (
 							Where e-Residents go to raise funds
 						</Heading>
 						<Text fontSize={[2, 3, 4]} color="white">
-							A global approach to fundraising and boosting businesses, build on blockchain.
+							A global approach to fundraising and boosting businesses, built on blockchain.
 						</Text>
 					</Box>
 					<Box p={3} width={1 / 2} style={{ textAlign: "center" }}>
