@@ -28,7 +28,7 @@
     "gatsby-source-filesystem": "^2.1.4",
     "gatsby-transformer-sharp": "^2.1.14",
     "hashicon": "^0.3.0",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "netlify-cms-app": "^2.9.7",
     "numeral": "^2.0.6",
     "prop-types": "^15.7.2",
